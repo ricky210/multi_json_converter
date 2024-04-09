@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  server_unittest_converter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SUC_LOG_LEVEL: INFO # DEBUG / INFO / WARNING / ERROR / CRITICAL
+      SUC_LOG_FORMAT: SIMPLE # SIMPLE / DETAIL
+    volumes:
+      - ./input:/opt/app/server_unittest_converter/input
+      - ./output:/opt/app/server_unittest_converter/output
